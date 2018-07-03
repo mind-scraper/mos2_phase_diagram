@@ -1,6 +1,6 @@
 # MoS2 Phase Diagram
 
-Python script for the Supporting Information of A.S. Rosen, J.M. Notestein, R.Q. Snurr, "Comprehensive Phase Diagrams of MoS2 Edge Sites using Dispersion-Corrected DFT Free Energy Calculations" in J. Phys. Chem. C (2018).
+Python script for the Supporting Information of A.S. Rosen, J.M. Notestein, R.Q. Snurr, "Comprehensive Phase Diagrams of MoS2 Edge Sites using Dispersion-Corrected DFT Free Energy Calculations" in J. Phys. Chem. C (2018). https://pubs.acs.org/doi/abs/10.1021/acs.jpcc.8b02524
 
 ## Instructions
 To run mos2_data.py, open the file and change T (temperature in Kelvins), f_HS2 (fugacity of H2S in bar), and f_H2 (fugacity of H2 in bar) to the desired parameters. Partial pressures can be used in place of fugacities if ideal gas conditions can be assumed. Make sure the excel_path variable points to the included Excel sheet. Then, run the Python script (e.g. via `python mos2_data.py` from the command line). 

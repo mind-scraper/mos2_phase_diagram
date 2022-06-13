@@ -23,8 +23,8 @@ kJmoltoeV = 0.01036427 #kJ/mol to eV conversion
 
 def read_excel_data():
 #Read in data from Excel sheet
-	E_Moedge = pd.read_excel(excel_path,'E_Mo_edge',header=1).values
-	E_Sedge = pd.read_excel(excel_path,'E_S_edge',header=1).values
+	E_Moedge = pd.read_excel(excel_path,'E_Mo_edge',header=1, index_col=0).values
+	E_Sedge = pd.read_excel(excel_path,'E_S_edge',header=1, index_col=0).values
 	S_vib_Moedge = pd.read_excel(excel_path,'S_vibrations_Mo_edge',
 		header=None,index_col=0).values
 	S_vib_Sedge = pd.read_excel(excel_path,'S_vibrations_S_edge',
@@ -209,11 +209,11 @@ def run_thermo():
 	if  T < 298 or T > 6000:
 		print('Warning: Shomate fit parameters for H2 and H2S were not '
 			+'fit for T < 298 K or T > 6000 K')
-	E_H2 = ref_species.loc['H2'].values[0]
-	E_H2S = ref_species.loc['H2S'].values[0]
-	E_S_bulk = ref_species.loc['S (bulk)'].values[0]
-	E_Mo_bulk = ref_species.loc['Mo (bulk)'].values[0]
-	E_MoS2_bulk = ref_species.loc['MoS2 (bulk)'].values[0]
+	E_H2 = ref_species.loc[0][1]
+	E_H2S = ref_species.loc[1][1]
+	E_S_bulk = ref_species.loc[2][1]
+	E_Mo_bulk = ref_species.loc[3][1]
+	E_MoS2_bulk = ref_species.loc[4][1]
 	mu_H2_0 = get_mu_ref('H2',E_H2,T)
 	mu_H2S_0 = get_mu_ref('H2S',E_H2S,T)
 	mu_S = np.log(f_H2S/f_H2)*(k_B*T) - mu_H2_0 + mu_H2S_0
